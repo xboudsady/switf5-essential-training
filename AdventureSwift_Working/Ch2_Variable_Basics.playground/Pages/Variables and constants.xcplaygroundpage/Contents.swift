@@ -21,3 +21,5 @@ let maxHealth = 100
 currentHealth = 13
 //maxHealth = 110
 
+var inventoryItems = 5, equipmentSlots = 3, currentGold = 42
+

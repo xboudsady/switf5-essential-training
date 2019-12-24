@@ -13,13 +13,21 @@
  
  */
 // Test variable
-
+var dialogue = "the Innkeeper's Haven"
 
 // String data
-
+dialogue.count
+dialogue.isEmpty
+dialogue.contains("s")
 
 // Append and Insert
-
+dialogue.append(contentsOf: ", weary travellers!")
 
 // Remove and Split
+dialogue.removeLast()
+dialogue.removeFirst()
+//dialogue.removeAll()
 
+dialogue.split(separator: ",")
+
+print(dialogue)
