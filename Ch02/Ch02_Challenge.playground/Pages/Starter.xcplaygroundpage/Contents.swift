@@ -15,17 +15,29 @@
  
  */
 // 1
+var characterName = "Seth"
+var weaponClassification = "Swords"
 
 // 2
+characterName += " Slayer"
 
 // 3
+var currentMana = 100.00
 
 // 4
+var manaPercentage = String(currentMana / 100)
 
 // 5
+var debugStats = "Character Name: \(characterName) \nWeapon Type: \(weaponClassification) \nMana: \(currentMana)"
 
 // 6
+var questAccepted = true
+var canQuest = true
 
 // 7
+var questStatus = questAccepted && canQuest
 
 // 8
+debugStats += "\nQuest Status: \(questStatus)"
+
+print(debugStats)
