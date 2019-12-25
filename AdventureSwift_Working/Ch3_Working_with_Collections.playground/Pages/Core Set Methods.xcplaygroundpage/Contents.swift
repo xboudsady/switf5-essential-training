@@ -19,7 +19,15 @@ var completedQuests: Set = ["Big Boss", "All-4-One", "The Hereafter"]
 
 // Set operations
 var commonQuests = activeQuests.intersection(completedQuests)
+//print(commonQuests)
+
 var differentQuests = activeQuests.symmetricDifference(completedQuests)
+//print(differentQuests)
+
 var allQuests = activeQuests.union(completedQuests)
+
 var clippedQuests = activeQuests.subtracting((completedQuests))
+print(clippedQuests)
+
+
 
