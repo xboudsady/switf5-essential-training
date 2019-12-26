@@ -14,7 +14,12 @@
 
  */
 // Defining closures
+var closure: () -> () = {}
 
 
 // Initializing closures
+var computeBonusDamage = { base in
+    return base * 4
+}
 
+computeBonusDamage(25)
