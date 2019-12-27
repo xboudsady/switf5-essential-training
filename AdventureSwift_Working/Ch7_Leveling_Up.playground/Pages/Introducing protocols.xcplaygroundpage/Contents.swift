@@ -15,7 +15,40 @@
 
  */
 // Declare a protocol
+protocol Collectable {
+    var name: String { get }
+    var price: Int { get set }
+    
+    init(withName: String, startingPrice: Int)  // Function signature, no body required
+    func collect() -> Bool
+}
+
+protocol Usable {
+    func use()
+}
 
 
 // Protocol adoption
+class Item: Collectable, Usable {
+    var name: String                                            // Class properties
+    var price: Int
+    
+    required init(withName: String, startingPrice: Int) {       // Initializing function
+        self.name = withName
+        self.price = startingPrice
+    }
+    
+    func collect() -> Bool {                // Class method, returning Boolean
+        print("Item collected!")
+        return true
+    }
+    
+    func use() {
+        print("Item used!")
+    }
+}
 
+// Create instances of Item
+let potion = Item(withName: "High Potion", startingPrice: 35)
+potion.collect()
+potion.use()
