@@ -23,6 +23,16 @@ protocol Collectable {
     func collect() -> Bool
 }
 
+extension Collectable {
+    var priceIncrease: Int {
+        return self.price * 10
+    }
+    
+    init(name: String) {
+        self.init(withName: name, startingPrice: 100)
+    }
+}
+
 protocol Usable {
     func use()
 }
@@ -38,13 +48,18 @@ class Item: Collectable, Usable {
         self.price = startingPrice
     }
     
-    func collect() -> Bool {                // Class method, returning Boolean
-        print("Item collected!")
-        return true
-    }
+//    func collect() -> Bool {                // Class method, returning Boolean
+//        print("Item collected!")
+//        return true
+//    }
     
     func use() {
         print("Item used!")
+    }
+    
+    func collect() -> Bool {
+        print("Default item couldn't be collected...")
+        return false
     }
 }
 
@@ -52,3 +67,14 @@ class Item: Collectable, Usable {
 let potion = Item(withName: "High Potion", startingPrice: 35)
 potion.collect()
 potion.use()
+
+let antidote = Item(name: "Antidote")
+antidote.price
+
+extension String {
+    func fancyDebug() {
+        print("This string has \(self.count) characters")
+    }
+}
+
+antidote.name.fancyDebug()
